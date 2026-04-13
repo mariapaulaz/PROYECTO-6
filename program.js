@@ -52,9 +52,13 @@ async function fetchPetLocation() {
             }
         }).addTo(map);
 
-        // Automáticamente abrir el popup indicando que lo encontró
+        // Automáticamente abrir el popup indicando que lo encontró y centrar el mapa en la mascota de inmediato
         if(dogMarker) {
+            map.flyTo(dogMarker.getLatLng(), 16, { animate: true, duration: 1.5 });
             dogMarker.openPopup();
+            
+            // Forzar actualización visual del mapa (previene que se vea gris al cargar muy rápido)
+            setTimeout(() => { map.invalidateSize(); }, 500);
         }
 
     } catch (error) {
@@ -65,6 +69,8 @@ async function fetchPetLocation() {
         // Si el usuario abre el html directamente, le mostramos el perrito igual a modo de muestra
         dogMarker = L.marker([4.6097, -74.0721], {icon: petIcon}).addTo(map);
         dogMarker.bindPopup(`<div class="popup-title">Firulais (Modo Prueba)</div><div>🐾 Chip de respaldo activo</div>`).openPopup();
+        map.flyTo(dogMarker.getLatLng(), 16, { animate: true, duration: 1.5 });
+        setTimeout(() => { map.invalidateSize(); }, 500);
     }
 }
 
