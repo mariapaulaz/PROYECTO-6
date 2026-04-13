@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentro de Animales | Rastreo GPS</title>
+    <meta name="description" content="Rastreo en tiempo real de tu mascota en Bogotá.">
+    <!-- Estilo de Leafter.js (Librería de Mapas) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <!-- Capa de Estilos Propios (CSS) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Encuentro de Animales</h1>
+            <p>Rastreo de señal de chip imaginario en Bogotá en tiempo real 📡</p>
+        </header>
+
+        <main>
+            <!-- Contenedor del Mapa interactivo -->
+            <div id="map"></div>
+        </main>
+        
+        <footer>
+            <p><small>Sistema seguro enlazado mediante GPS simulado • Bogotá, Colombia</small></p>
+            <button id="locate-btn" class="glow-on-hover">📍 Centrar en mi Mascota</button>
+        </footer>
+    </div>
+    
+    <!-- Librería Javascript del Mapa -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <!-- Capa de Lógica del Frontend (JS) -->
+    <script src="program.js"></script>
+</body>
+</html>
